@@ -113,16 +113,4 @@ export default {
     }
   }
 }
-
-.gold {
-  border: 4px solid #fdd835;
-}
-
-.silver {
-  border: 4px solid #90a4ae;
-}
-
-.bronze {
-  border: 4px solid #795548;
-}
 </style>

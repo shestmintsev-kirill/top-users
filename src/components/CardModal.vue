@@ -12,7 +12,28 @@
           />
         </div>
         <div class="after-container-card">
-          <img class="avatar" :src="`${card.avatar}`" alt="user-avatar" />
+          <img
+            v-if="!sortDescending"
+            :class="{
+              gold: index === 0,
+              silver: index === 1,
+              bronze: index === 2,
+            }"
+            class="avatar"
+            :src="`${card.avatar}`"
+            alt="avatar"
+          />
+          <img
+            v-else
+            :class="{
+              gold: index === cards.length - 1,
+              silver: index === cards.length - 2,
+              bronze: index === cards.length - 3,
+            }"
+            class="avatar"
+            :src="`${card.avatar}`"
+            alt="avatar"
+          />
           <div class="after-container-card-info">
             <ul>
               <li class="fz18">Имя:</li>
@@ -26,7 +47,7 @@
           </div>
         </div>
         <div class="after-container-card-footer">
-          <p>О себе:</p>
+          <p class="fz18">О себе:</p>
           <p>{{ card.description }}</p>
         </div>
       </div>
@@ -115,7 +136,6 @@ export default {
 
     &-footer {
       width: 100%;
-      font-size: 18px;
     }
   }
 }
